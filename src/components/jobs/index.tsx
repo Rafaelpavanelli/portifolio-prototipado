@@ -1,8 +1,9 @@
 import { JobList } from "../jobList";
+import { motion } from "framer-motion";
 
 export function Jobs() {
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
       <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center mt-10 md:text-2xl xl:text-3xl">
         HISTÓRICO PROFISSIONAL
       </h2>
@@ -20,6 +21,6 @@ export function Jobs() {
         description="Minha função é desenvolver sites modernos e funcionais. Atuo como Front-end web utilizando tecnologias como Next, Tailwind, firebase,Styled Components e entre outras tecnologias mais mordernas."
         number={2}
       />
-    </div>
+    </motion.div>
   );
 }
