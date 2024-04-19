@@ -3,7 +3,7 @@ import { JobList } from "../jobList";
 export function Jobs() {
   return (
     <div>
-      <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center mt-10 md:text-2xl">
+      <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center mt-10 md:text-2xl xl:text-3xl">
         HISTÓRICO PROFISSIONAL
       </h2>
       <JobList
