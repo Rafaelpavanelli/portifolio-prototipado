@@ -8,7 +8,24 @@
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 20px;
+  background-color: #38604e; 
 
+}
+
+/* Track */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #244235; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c705a; 
+}
 
 @layer utilities {
   .text-balance {
