@@ -39,6 +39,7 @@ export function Courses() {
           <motion.div
             className="border-l-2 border-[#727E6E] w-72 pl-4 md:text-xl md:w-96 xl:w-full xl:text-2xl"
             variants={item}
+            key={index}
           >
             <CardCourse
               title={data.title}
