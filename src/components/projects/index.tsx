@@ -41,11 +41,10 @@ export function Projects() {
   return (
     <motion.div
       className="mt-10"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{opacity: 0,y:-100}} whileInView={{opacity: 1,y:0}}
     >
-      <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center mt-10 md:text-2xl">
-        Projetos
+      <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center md:text-2xl xl:text-3xl m-10 ">
+        PROJETOS
       </h2>
       <div className="">
         <Slider {...settings}>

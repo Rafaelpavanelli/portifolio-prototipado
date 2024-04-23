@@ -39,10 +39,6 @@ export const SkillList =[
    name: 'Git'
 },
  {
-   icon: <SiGit size={60}/>,
-   name: 'Git'
-},
- {
    icon: <SiReact size={60}/>,
    name: 'React Native'
 },
@@ -79,7 +75,7 @@ export const SkillList =[
    name: 'Typescript'
 },
  {
-   icon: <DiResponsive size={60}/>,
+   icon: <DiResponsive size={100}/>,
    name: 'Responsive Website'
 }
 ]

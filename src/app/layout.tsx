@@ -14,7 +14,7 @@ const Hannari = localFont({
 
 export const metadata: Metadata = {
   title: "Portifólio",
-  description: "Portifólio gerado por Rafael Henrique Pavanelli",
+  description: "Portifólio gerado por Rafael Henrique Pavanelli"
 };
 
 export default function RootLayout({
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={Hannari.className}>
+    <html lang="en"  style={{scrollBehavior:'smooth'}}>
+      <body className={Hannari.className} >
         {children}
         </body>
     </html>

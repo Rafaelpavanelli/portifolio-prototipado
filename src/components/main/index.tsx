@@ -25,24 +25,29 @@ export function Main() {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="bg-gradient-to-r from-[#727E6E] from-60% to-[#576153] to-80% w-full h-screen px-12 flex flex-col justify-center gap-4"
+      className="bg-[#95a69a] w-full h-screen px-12 flex flex-col justify-center gap-40 relative"
     >
-      <motion.h1 variants={item} className="text-4xl font-normal tracking-wide text-start text-[#111A17] w-20 [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)] md:text-5xl xl:text-6xl xl:w-60">
-        Rafael Pavanelli
+      <motion.h1
+        variants={item}
+        className="text-4xl font-normal tracking-wide text-center text-[#111A17]  [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)] md:text-5xl xl:text-6xl "
+      >
+        Olá, Meu nome é Rafael Pavanelli
       </motion.h1>
-      <motion.p variants={item} className=" text-md text-[#111A17] md:text-2xl xl:text-3xl">
+      <motion.p
+        variants={item}
+        className=" text-xl text-[#111A17] md:text-2xl xl:text-3xl text-center xl:px-28"
+      >
         Sou um desenvolvedor de front-end na M2 software, uma empresa de
         tecnologia que cria soluções digitais para diversos segmentos. Trabalho
         com React, Next.js, Tailwind CSS e outras ferramentas para desenvolver
         websites e aplicativos que sejam funcionais, atrativos e acessíveis.
       </motion.p>
-      <motion.p variants={item} className=" text-md text-[#111A17] md:text-2xl xl:text-3xl">
-        Possuo cursos e certificações em web design, HTML5, CSS3, JavaScript e
-        Photoshop, que me ajudam a aprimorar minhas habilidades e meu portfólio.
-        Sou apaixonado por design web e sempre busco aprender novas tecnologias
-        e tendências. Meu objetivo é criar interfaces que ofereçam uma ótima
-        experiência para os usuários e que atendam às necessidades dos clientes.
-      </motion.p>
+      <motion.div
+       
+        className="w-6 min-h-10 rounded-md border-2 border-gray-600 flex justify-center p-1 mx-auto absolute bottom-4 left-0 right-0 xl:rounded-2xl"
+      >
+        <motion.div className="w-2 h-2 bg-gray-800 rounded-full " animate={{translateY: 20,opacity:0}} transition={{ease:'easeInOut',duration: 1, damping: 10, stiffness: 100, repeat:Infinity }}></motion.div>
+      </motion.div>
     </motion.div>
   );
 }
