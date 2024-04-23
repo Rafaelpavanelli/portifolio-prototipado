@@ -1,5 +1,6 @@
 "use client";
 import { Courses } from "@/components/courses";
+import { Footer } from "@/components/footer";
 import { Jobs } from "@/components/jobs";
 import { Languages } from "@/components/languages";
 import { Main } from "@/components/main";
@@ -25,9 +26,7 @@ export default function Home() {
         <Jobs />
         <Projects />
       </div>
-      <p className="text-[#111A17] text-[10px] ">
-        © 2024 Ayla Cardoso e Rafael Pavanelli. Todos os direitos reservados
-      </p>
+     <Footer />
     </div>
   );
 }
