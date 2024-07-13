@@ -39,6 +39,10 @@ export const Courses:PropsCardCourse[] = [{
     plataform: "RocketSeat",
     year: '2020'
 },
-
+{
+    plataform: "RocketSeat",
+    title: "Ignite Mobile",
+    year: "2024"
+}
 
 ]

@@ -17,7 +17,7 @@ export function Jobs() {
       <JobList
         office="Front End na M2 Software"
         start="Maio 2023"
-        end="Presente"
+        end="Maio 2024"
         description="Minha função é desenvolver sites modernos e funcionais. Atuo como Front-end web utilizando tecnologias como Next, Tailwind, firebase,Styled Components e entre outras tecnologias mais mordernas."
         number={2}
       />
