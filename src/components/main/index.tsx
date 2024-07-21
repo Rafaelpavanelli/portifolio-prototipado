@@ -25,7 +25,7 @@ export function Main() {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="bg-[#95a69a] w-full h-screen px-12 flex flex-col justify-center gap-40 relative"
+      className="bg-[#95a69a] w-full h-screen px-12 flex flex-col justify-center gap-32 relative"
     >
       <motion.h1
         variants={item}
@@ -35,18 +35,27 @@ export function Main() {
       </motion.h1>
       <motion.p
         variants={item}
-        className=" text-xl text-[#111A17] md:text-2xl xl:text-3xl text-center xl:px-28"
+        className=" text-xl text-[#111A17] md:text-2xl xl:text-3xl text-center xl:px-28 "
       >
-        Sou um desenvolvedor de front-end na M2 software, uma empresa de
-        tecnologia que cria soluções digitais para diversos segmentos. Trabalho
-        com React, Next.js, Tailwind CSS e outras ferramentas para desenvolver
-        websites e aplicativos que sejam funcionais, atrativos e acessíveis.
+        Olá, sou desenvolvedor{" "}
+        <span className="font-semibold">Front-end web</span> e{" "}
+        <span className="font-semibold">mobile</span> a mais de 2 anos. Gostou
+        muito de poder desenvolver minhas habilidades como desenvolvedor Mobile
+        e Front-end web, porem possuo também habilidades habilidades com
+        back-end node.
       </motion.p>
-      <motion.div
-       
-        className="w-6 min-h-10 rounded-md border-2 border-gray-600 flex justify-center p-1 mx-auto absolute bottom-4 left-0 right-0 xl:rounded-2xl"
-      >
-        <motion.div className="w-2 h-2 bg-gray-800 rounded-full " animate={{translateY: 20,opacity:0}} transition={{ease:'easeInOut',duration: 1, damping: 10, stiffness: 100, repeat:Infinity }}></motion.div>
+      <motion.div className="w-6 min-h-10 rounded-md border-2 border-gray-600 flex justify-center p-1 mx-auto absolute bottom-4 left-0 right-0 xl:rounded-2xl">
+        <motion.div
+          className="w-2 h-2 bg-gray-800 rounded-full "
+          animate={{ translateY: 20, opacity: 0 }}
+          transition={{
+            ease: "easeInOut",
+            duration: 1,
+            damping: 10,
+            stiffness: 100,
+            repeat: Infinity,
+          }}
+        ></motion.div>
       </motion.div>
     </motion.div>
   );
