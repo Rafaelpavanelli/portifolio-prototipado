@@ -24,7 +24,7 @@ export function SideCardLink() {
         </Link>
         <Link
           className="px-4 py-2 hover:bg-[#4a7265] transition-all ease-out"
-          href={"https://wa.me/5514997100117"}
+          href={"https://wa.me/5514982070391"}
           target="blank"
         >
           <SiWhatsapp size={28} color="#244235" />
