@@ -74,7 +74,7 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 ">
           {filteredProjects.map((item, index) => (
             <CardProject
               image={item.image}
