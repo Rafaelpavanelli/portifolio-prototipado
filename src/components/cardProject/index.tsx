@@ -19,15 +19,15 @@ export function CardProject({
   description,
 }: CardProps) {
   return (
-    <div className="w-full md:w-full bg-[#548173] p-2 md:p-4 rounded-md">
+    <div className="w-full md:w-[90%] bg-[#548173] p-2 md:p-4 rounded-md">
       <Image
         alt="Imagem do projeto"
         src={image}
-        width={700}
+        width={600}
         height={300}
         className="rounded-md w-full h-52 md:h-80 md:max-h-80"
       />
-      <div className="flex flex-col justify-between ">
+      <div className="flex flex-col justify-between mt-4">
         <h1 className="font-semibold md:text-xl ">{title}</h1>
         <h2 className="font-normal text-wrap text-gray-800 text-sm md:text-base h-10">
           {description}
