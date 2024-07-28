@@ -6,10 +6,12 @@ import { Languages } from "@/components/languages";
 import { Main } from "@/components/main";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
+
 import { motion, useScroll } from "framer-motion";
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
-
+  
   return (
     <div className="bg-[#1d1d1d] max-h-screen  border-t-[#151515] border-opacity-100">
       <motion.div
@@ -18,13 +20,13 @@ export default function Home() {
       />
       <Main />
       <div className="px-10 xl:pl-20 flex flex-col gap-10 bg-[#151515] border-[#151515] border-t-2">
+        <Jobs />
         <Courses />
         <Skills />
         <Languages />
-        <Jobs />
         <Projects />
       </div>
-     <Footer />
+      <Footer />
     </div>
   );
 }

@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CardLink } from "../sideCardLink";
+import { useEffect } from "react";
+import { useAnalytics } from "@/controller/hooks/useAnalytics";
 
 export function Main() {
+  const { VisualizedSite } = useAnalytics();
+  useEffect(() => {
+      VisualizedSite();
+  },[]);
+
   const container = {};
 
   const item = {

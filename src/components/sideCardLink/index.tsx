@@ -36,13 +36,13 @@ export function CardLink() {
           variants={container}
         >
           <motion.div variants={item}>
-            <Link  href="https://github.com/Rafaelpavanelli"><SiGit size={28} color="#4a7265" /></Link>
+            <Link  href="https://github.com/Rafaelpavanelli" target="_blank"><SiGit size={28} color="#4a7265" /></Link>
           </motion.div>
           <motion.div variants={item} >
-           <Link href="https://www.linkedin.com/in/rafael-pavanelli-59807a1a4/"><SiLinkedin size={28} color="#4a7265" /></Link> 
+           <Link href="https://www.linkedin.com/in/rafael-pavanelli-59807a1a4/" target="_blank"><SiLinkedin size={28} color="#4a7265" /></Link> 
           </motion.div>
           <motion.div variants={item} >
-            <Link href="/Images/Curriculo.pdf"><FaFileDownload size={28} color="#4a7265" /></Link>
+            <Link href="/Images/Curriculo.pdf" type="file" target="_blank"><FaFileDownload size={28} color="#4a7265" /></Link>
           </motion.div>
         </motion.div>
         <motion.div
