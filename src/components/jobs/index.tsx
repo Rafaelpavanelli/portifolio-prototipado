@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function Jobs() {
   return (
-    <motion.div id="jobs" initial={{opacity: 0,y:-100}} whileInView={{opacity: 1,y:0}}>
+    <motion.div id="jobs" initial={{opacity: 0,y:-100}} whileInView={{opacity: 1,y:0}} className="pt-10">
       <h2 className="text-gray-100 [text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center md:text-2xl xl:text-3xl">
         HISTÓRICO PROFISSIONAL
       </h2>

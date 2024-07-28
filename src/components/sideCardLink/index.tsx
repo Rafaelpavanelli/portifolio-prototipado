@@ -42,7 +42,7 @@ export function CardLink() {
            <Link href="https://www.linkedin.com/in/rafael-pavanelli-59807a1a4/"><SiLinkedin size={28} color="#4a7265" /></Link> 
           </motion.div>
           <motion.div variants={item} >
-            <Link href="/Images/Curriculo.pdf"><FaFileDownload size={28} color="#4a7265" /></Link>
+            <Link href="/Images/Curriculo.pdf" type="file"><FaFileDownload size={28} color="#4a7265" /></Link>
           </motion.div>
         </motion.div>
         <motion.div

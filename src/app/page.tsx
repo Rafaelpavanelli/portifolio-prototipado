@@ -18,10 +18,10 @@ export default function Home() {
       />
       <Main />
       <div className="px-10 xl:pl-20 flex flex-col gap-10 bg-[#151515] border-[#151515] border-t-2">
+        <Jobs />
         <Courses />
         <Skills />
         <Languages />
-        <Jobs />
         <Projects />
       </div>
      <Footer />
