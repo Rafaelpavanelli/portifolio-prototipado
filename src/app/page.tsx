@@ -6,10 +6,15 @@ import { Languages } from "@/components/languages";
 import { Main } from "@/components/main";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
+import { useAnalytics } from "@/controller/hooks/useAnalytics";
 import { motion, useScroll } from "framer-motion";
+import { useEffect } from "react";
 export default function Home() {
   const { scrollYProgress } = useScroll();
-
+  const { VisualizedSite } = useAnalytics();
+  useEffect(() => {
+      VisualizedSite();
+  },[]);
   return (
     <div className="bg-[#1d1d1d] max-h-screen  border-t-[#151515] border-opacity-100">
       <motion.div
@@ -24,7 +29,7 @@ export default function Home() {
         <Languages />
         <Projects />
       </div>
-     <Footer />
+      <Footer />
     </div>
   );
 }
