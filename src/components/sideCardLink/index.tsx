@@ -3,49 +3,61 @@ import Link from "next/link";
 import { SiGit, SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { FaFileDownload } from "react-icons/fa";
 
-export function SideCardLink() {
+export function CardLink() {
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
-    <motion.div className="hidden absolute -left-20 z-10 top-60 xl:block"  animate={{left:0}}>
-      <div className="bg-white  flex flex-col justify-center items-center gap-4 rounded-tr-xl rounded-br-xl">
-        <Link
-          href={"https://www.linkedin.com/in/rafael-pavanelli-59807a1a4/"}
-          target="blank"
-          className="px-4 py-2 hover:bg-[#4a7265] hover:rounded-tr-xl transition-all ease-out	"
+    <motion.div className="mt-0 md:mt-4 flex flex-col justify-center items-center">
+      <motion.div className="flex text-center items-center gap-4">
+        <motion.div
+          transition={{ delay: 0.5 }}
+          initial={{ opacity: 0, translateX: -20 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          className="md:h-[2px] md:w-28 h-[1px] w-10 bg-[#4a7265]"
+        ></motion.div>
+        <motion.div
+          className="p-4 flex gap-4 "
+          initial={"hidden"}
+          animate={"visible"}
+          variants={container}
         >
-          <SiLinkedin size={28} color="#244235" className="" />
-        </Link>
-        <Link
-          className="px-4 py-2 hover:bg-[#4a7265] transition-all ease-out"
-          href={"/Images/Currículo.pdf"}
-          type="file"
-          target="blank"
-        >
-          <FaFileDownload size={28} color="#244235" />
-        </Link>
-        <Link
-          className="px-4 py-2 hover:bg-[#4a7265] transition-all ease-out"
-          href={"https://wa.me/5514982070391"}
-          target="blank"
-        >
-          <SiWhatsapp size={28} color="#244235" />
-        </Link>
-        <Link
-          className="px-4 py-2 hover:bg-[#4a7265] transition-all ease-out"
-          href={
-            "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=rafaelpavanellitbl@gmail.com"
-          }
-          target="blank"
-        >
-          <SiGmail size={28} color="#244235" />
-        </Link>
-        <Link
-          className="px-4 py-2 hover:bg-[#4a7265] hover:rounded-br-xl transition-all ease-out"
-          href={"https://github.com/Rafaelpavanelli"}
-          target="blank"
-        >
-          <SiGit size={28} color="#244235" />
-        </Link>
-      </div>
+          <motion.div variants={item}>
+            <Link  href="https://github.com/Rafaelpavanelli"><SiGit size={28} color="#4a7265" /></Link>
+          </motion.div>
+          <motion.div variants={item} >
+           <Link href="https://www.linkedin.com/in/rafael-pavanelli-59807a1a4/"><SiLinkedin size={28} color="#4a7265" /></Link> 
+          </motion.div>
+          <motion.div variants={item} >
+            <Link href="/Images/Curriculo.pdf"><FaFileDownload size={28} color="#4a7265" /></Link>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          transition={{ delay: 0.5 }}
+          initial={{ opacity: 0, translateX: 20 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          className="md:h-[2px] md:w-28 h-[1px] w-10 bg-[#4a7265]"
+        ></motion.div>
+      </motion.div>
+      <motion.div
+        transition={{ delay: 0.5 }}
+        initial={{ opacity: 0, translateY: 20 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        className="md:h-20 md:w-[2px] w-[1px] h-10 bg-[#4a7265]"
+      ></motion.div>
     </motion.div>
   );
 }

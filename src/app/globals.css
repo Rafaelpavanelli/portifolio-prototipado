@@ -6,10 +6,11 @@
 :root {
   max-width: 100%;
   overflow-x: hidden;
+  background: '#151515'
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
   background-color: #38604e; 
 
 }

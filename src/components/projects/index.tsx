@@ -3,13 +3,15 @@ import { CardProject } from "../cardProject";
 import { Projects as ProjectList } from "@/infos/projects";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Slider from "react-slick";
+import { FaDesktop, FaMobile } from "react-icons/fa";
 
 export function Projects() {
   const [selectPlataform, setSelectPlataform] = useState<string>("");
 
   function plataformSelected(type: string) {
-    type !== selectPlataform ? setSelectPlataform(type): setSelectPlataform('');
+    type !== selectPlataform
+      ? setSelectPlataform(type)
+      : setSelectPlataform("");
   }
 
   const settings = {
@@ -58,7 +60,7 @@ export function Projects() {
       initial={{ opacity: 0, y: -100 }}
       whileInView={{ opacity: 1, y: 0 }}
     >
-      <h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center md:text-2xl xl:text-3xl m-10 ">
+      <h2 className="text-gray-100 [text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center md:text-2xl xl:text-3xl m-10 ">
         PROJETOS
       </h2>
       <div className="">
@@ -67,9 +69,21 @@ export function Projects() {
             <p
               onClick={() => plataformSelected(plataforma)}
               key={index}
-              className={`px-2 rounded-sm first-letter:uppercase border-gray-600 border-[1px] text-center cursor-pointer font-medium ${plataforma === selectPlataform ? "bg-[#4a7265] text-white" : "bg-transparent text-black"} transition-all`}
+              className={`px-2 rounded-sm first-letter:uppercase text-center cursor-pointer font-medium  transition-all`}
             >
-              {plataforma}
+              {plataforma === "mobile" ? (
+                <FaMobile
+                  size={28}
+                  color={selectPlataform === plataforma ? "#f3f4f6" : "#383838"}
+                  className="shadow-inner"
+                />
+              ) : (
+                <FaDesktop
+                  size={28}
+                  color={selectPlataform === plataforma ? "#f3f4f6" : "#383838"}
+                  className="shadow-inner"
+                />
+              )}
             </p>
           ))}
         </div>

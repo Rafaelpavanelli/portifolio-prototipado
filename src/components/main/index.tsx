@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { CardLink } from "../sideCardLink";
 
 export function Main() {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const container = {};
 
   const item = {
     hidden: { y: 20, opacity: 0 },
@@ -21,42 +13,55 @@ export function Main() {
     },
   };
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="visible"
-      className="bg-[#95a69a] w-full h-screen px-12 flex flex-col justify-center gap-32 relative"
-    >
-      <motion.h1
-        variants={item}
-        className="text-4xl font-normal tracking-wide text-center text-[#111A17]  [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)] md:text-5xl xl:text-6xl "
+    <div className="max-w-screen max-h-screen h-screen w-screen relative">
+      <Image
+        src="/Images/background.jpeg"
+        quality={100}
+        width={1000}
+        height={600}
+        alt="background"
+        style={{ filter: "blur(2px) brightness(0.7)" }}
+        className="absolute w-screen h-screen z-1 object-cover"
+      />
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="absolute  w-full  md:h-screen  flex flex-col justify-between md:justify-center items-center z-10 gap-32  md:gap-0 "
       >
-        Olá, Meu nome é Rafael Pavanelli
-      </motion.h1>
-      <motion.p
-        variants={item}
-        className=" text-xl text-[#111A17] md:text-2xl xl:text-3xl text-center xl:px-28 "
-      >
-        Olá, sou desenvolvedor{" "}
-        <span className="font-semibold">Front-end web</span> e{" "}
-        <span className="font-semibold">mobile</span> a mais de 2 anos. Gostou
-        muito de poder desenvolver minhas habilidades como desenvolvedor Mobile
-        e Front-end web, porem possuo também habilidades habilidades com
-        back-end node.
-      </motion.p>
-      <motion.div className="w-6 min-h-10 rounded-md border-2 border-gray-600 flex justify-center p-1 mx-auto absolute bottom-4 left-0 right-0 xl:rounded-2xl">
         <motion.div
-          className="w-2 h-2 bg-gray-800 rounded-full "
-          animate={{ translateY: 20, opacity: 0 }}
-          transition={{
-            ease: "easeInOut",
-            duration: 1,
-            damping: 10,
-            stiffness: 100,
-            repeat: Infinity,
-          }}
-        ></motion.div>
+          variants={item}
+          className="flex flex-col pt-40 justify-center items-center h-96 md:h-auto md:justify-start "
+        >
+          <motion.p className="text-xl md:2xl text-center font-light text-gray-50 ">
+            Olá
+          </motion.p>
+          <motion.h1 className="text-2xl text-center  md:text-md font-normal tracking-wide  text-gray-50  [text-shadow:_0_4px_4px_rgb(0_0_0_/_25%)] md:text-5xl xl:text-6xl ">
+            Meu nome é Rafael
+          </motion.h1>
+          <motion.p className="text-md mt-2 md:mt-4 md:text-2xl text-center font-extralight text-gray-50 ">
+            Sou desenvolvedor Web / Mobile
+          </motion.p>
+        </motion.div>
+        <CardLink />
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="w-6 min-h-10 rounded-md border-2 border-gray-600 flex justify-center p-1 mx-auto absolute -bottom-20 md:bottom-4 left-0 right-0 xl:rounded-2xl"
+        >
+          <motion.div
+            className="w-2 h-2 bg-gray-800 rounded-full "
+            animate={{ translateY: 20, opacity: 0 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 1,
+              damping: 10,
+              stiffness: 100,
+              repeat: Infinity,
+            }}
+          ></motion.div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
