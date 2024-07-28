@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import "./globals.css";
 
@@ -24,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en"  style={{scrollBehavior:'smooth'}}>
-      <body className={Hannari.className} >
+      <body className={Hannari.className} style={{backgroundColor: '#151515'}}>
         {children}
         </body>
     </html>

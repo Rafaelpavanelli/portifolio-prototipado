@@ -19,17 +19,17 @@ export function CardProject({
   description,
 }: CardProps) {
   return (
-    <div className="w-full md:w-[90%] bg-[#548173] p-2 md:p-4 rounded-md">
+    <div className="w-full md:w-[90%] bg-[#ffffff] p-2 md:p-4 rounded-md border-2 border-gray-400 hover:shadow-lg ease-out hover:scale-105 transition-all duration-500">
       <Image
         alt="Imagem do projeto"
         src={image}
         width={600}
         height={300}
-        className="rounded-md w-full h-52 md:h-80 md:max-h-80"
+        className="rounded-md w-full h-52 md:h-80 md:max-h-80 object-contain"
       />
       <div className="flex flex-col justify-between mt-4">
         <h1 className="font-semibold md:text-xl ">{title}</h1>
-        <h2 className="font-normal text-wrap text-gray-800 text-sm md:text-base h-10">
+        <h2 className="font-normal text-wrap text-gray-800 text-sm md:text-base h-auto">
           {description}
         </h2>
         <div className="flex justify-between">
@@ -39,7 +39,7 @@ export function CardProject({
               return tech ? (
                 <div
                   key={index}
-                  className={`border-[1px] flex border-gray-300 rounded-full p-1 justify-center items-center bg-white hover:z-10 transition-all ${
+                  className={`border-[1px] flex border-gray-300 rounded-full p-1 justify-center items-center  bg-white hover:z-10 transition-all ${
                     index > 0 ? `-ml-2 z-${index * 2} ` : "z-1"
                   }`}
                 >

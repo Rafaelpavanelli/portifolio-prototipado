@@ -25,13 +25,13 @@ export function Courses() {
 
   return (
     <motion.div
-      className=" mt-10"
+      className=" mt-10 ml-10 md:ml-0"
       initial="hidden"
       animate="visible"
       variants={list}
       id="courses"
     >
-      <motion.h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center  md:text-2xl xl:text-3xl" variants={item}>
+      <motion.h2 className="[text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-gray-100 text-lg font-regular text-center  md:text-2xl xl:text-3xl" variants={item}>
         CURSOS E CERTIFICADOS
       </motion.h2>
       <div className="flex flex-col items-center mt-8 gap-8 w-3/4">

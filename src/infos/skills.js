@@ -7,7 +7,7 @@ import { DiResponsive } from "react-icons/di";
 
 export const SkillList =[
  {
-    icon: <SiAxios size={60}/>,
+    icon: <SiAxios size={60} />,
     name: 'Axios'
  },
  {
