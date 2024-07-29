@@ -8,6 +8,7 @@ export function Main() {
   const { VisualizedSite } = useAnalytics();
   useEffect(() => {
       VisualizedSite();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   const container = {};
@@ -27,6 +28,7 @@ export function Main() {
         width={1000}
         height={600}
         alt="background"
+        priority
         style={{ filter: "blur(2px) brightness(0.7)" }}
         className="absolute w-screen h-screen z-1 object-cover"
       />

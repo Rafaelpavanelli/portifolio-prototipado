@@ -1,6 +1,6 @@
 "use client";
 import { CardProject } from "../cardProject";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaDesktop, FaMobile } from "react-icons/fa";
 import { ProjectInfosType } from "@/controller/types/Project.type";
@@ -12,22 +12,13 @@ export function Projects() {
   const [selectPlataform, setSelectPlataform] = useState<string>("");
   const [projects, setProjects] = useState<ProjectInfosType[]>([]);
   const [loading, setLoading] = useState(false);
+
   function plataformSelected(type: string) {
     type !== selectPlataform
       ? setSelectPlataform(type)
       : setSelectPlataform("");
   }
- const container = {
-   hidden: { opacity: 0,top:10},
-   visible: {opacity: 1,top:0},
-   exit: { opacity: 0, bottom: 10}
- }
- const cards = {
-  hidden: { opacity: 0,right:10},
-  visible: {opacity: 1,right:0},
-  exit: {opacity: 0,left:0},
 
- }
   useEffect(() => {
     const fetchProjects = async () => {
       setLoading(true);
@@ -36,11 +27,9 @@ export function Projects() {
         if (Array.isArray(projectList)) {
           setProjects(projectList);
         }
-        setLoading(false)
       } catch (error) {
         console.error("Failed to fetch projects:", error);
-        
-      }finally{
+      } finally {
         setLoading(false);
       }
     };
@@ -53,7 +42,7 @@ export function Projects() {
     <motion.div
       className="mt-10"
       initial={{ opacity: 0, y: -100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
     >
       <h2 className="text-gray-100 [text-shadow:_0_4px_4px_rgb(0_0_0_/_15%)] text-lg font-regular text-center md:text-2xl xl:text-3xl m-10">
         PROJETOS
@@ -85,25 +74,50 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8">
-          {!loading ? 
-            projects.length > 0 ? projects.map((item: ProjectInfosType, index) => (
-              <CardProject
-                image={item.coverUrl || ""}
-                link={item.link || "#"}
-                title={item.name || "Untitled Project"}
-                tecnologies={item.languages || []}
-                description={
-                  item.shortDescription || "No description available."
-                }
-                key={index}
-              />
-            )): <p className="text-2xl text-gray-300 text-center h-40 w-full col-span-2">Nenhum projeto registrado</p>
-          : 
-          [...Array(1)].map((_, i) => (
-             <CardProjectSkelleton key={i}/>
-          ))}
-         
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8">
+          <AnimatePresence mode="wait">
+            {!loading ? (
+              projects.length > 0 ? (
+                projects.map((item: ProjectInfosType, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5,delay: index *0.3 }}
+                  >
+                    <CardProject
+                      image={item.coverUrl || ""}
+                      link={item.link || "#"}
+                      title={item.name || "Untitled Project"}
+                      tecnologies={item.languages || []}
+                      description={
+                        item.shortDescription || "No description available."
+                      }
+                      github={item.github}
+                      key={index}
+                    />
+                  </motion.div>
+                ))
+              ) : (
+                <p className="text-2xl text-gray-300 text-center h-40 w-full col-span-2">
+                  Nenhum projeto registrado
+                </p>
+              )
+            ) : (
+              [...Array(2)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5,delay: i *0.3 }}
+                >
+                  <CardProjectSkelleton key={i} />{" "}
+                </motion.div>
+              ))
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </motion.div>

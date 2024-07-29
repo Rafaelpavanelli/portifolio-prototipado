@@ -37,6 +37,6 @@ export async function SaveImages(files: ProjectImageTypes) {
         });
 
     } catch (error) {
-        console.log(error);
+        console.log("Erro no save"+error);
     }
 }

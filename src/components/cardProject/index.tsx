@@ -1,25 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Tecnologies } from "@/infos/ListTecnologies";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+
+import { PiBrowsersThin } from "react-icons/pi";
+import { useState } from "react";
 
 type CardProps = {
   title: string;
   image: string;
-  link: string;
+  link?: string;
   tecnologies: string[];
   description: string;
+  github?: string;
 };
 
 export function CardProject({
   image,
-  link,
+  link = "#",
   title = "Untitled Project",
   tecnologies = [],
   description = "No description available.",
+  github = "#",
 }: CardProps) {
   return (
-    <div className="w-full md:w-[90%] bg-[#ffffff] p-2 md:p-4 rounded-md border-2 border-gray-400 hover:shadow-lg ease-out hover:scale-105 transition-all duration-500">
+    <div className="w-full md:w-[80%] bg-gray-200 p-2 md:p-4 rounded-md border-2 border-gray-400 hover:shadow-lg ease-out hover:scale-105 transition-all duration-500">
       {image && image !== "" && (
         <Image
           alt={title || "Imagem do projeto"}
@@ -54,12 +59,26 @@ export function CardProject({
               ) : null;
             })}
           </div>
-          <Link
-            href={link}
-            className="hidden md:flex items-center gap-2 text-gray-800 hover:text-gray-900 transition-all"
-          >
-            Ver <FaArrowUpRightFromSquare size={15} className="text-gray-800" />
-          </Link>
+          <div className="flex gap-2 justify-center items-center">
+
+          {link !== "#" && link !== 'null' ? (
+            <Link
+              href={link}
+              className="hidden md:flex items-center gap-2 text-gray-800 hover:text-gray-900 transition-all"
+            >
+              <PiBrowsersThin size={24} className="text-gray-800 cursor-pointer" />
+            </Link>
+          ): (<PiBrowsersThin size={24} className="text-gray-400 cursor-default" />)}
+          {github !== "#" ? (
+            <Link
+              href={github}
+              className="hidden md:flex items-center gap-2 text-gray-800 hover:text-gray-900 transition-all"
+            >
+              <FaGithub size={24} className="text-gray-800 cursor-pointer" />
+            </Link>
+          ): (<FaGithub size={24} className="text-gray-400 cursor-default" />)}
+          </div>
+          
         </div>
       </div>
     </div>

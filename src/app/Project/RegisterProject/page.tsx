@@ -55,6 +55,7 @@ export default function RegisterProject() {
       github,
       shortDescription,
       detailedDescription,
+      coverUrl: ''
     };
 
     try {

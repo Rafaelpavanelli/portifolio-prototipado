@@ -2,7 +2,7 @@
 
 export function CardProjectSkelleton() {
   return (
-    <div className="w-full md:w-[90%] bg-[#ffffff] p-2 md:p-4 rounded-md border-2 border-gray-400">
+    <div className="w-full md:w-[80%] bg-[#ffffff] p-2 md:p-4 rounded-md border-2 border-gray-400">
      
       <div className="rounded-md w-full h-46 md:h-72 md:max-h-80 bg-gray-200"></div>
       
