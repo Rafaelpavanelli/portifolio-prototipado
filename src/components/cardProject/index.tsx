@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Tecnologies } from "@/infos/ListTecnologies";
 import { FaGithub } from "react-icons/fa";
-
+import {motion} from 'framer-motion'
 import { PiBrowsersThin } from "react-icons/pi";
-import { useState } from "react";
 
 type CardProps = {
   title: string;
@@ -23,8 +22,9 @@ export function CardProject({
   description = "No description available.",
   github = "#",
 }: CardProps) {
-  return (
-    <div className="w-full md:w-[80%] bg-gray-200 p-2 md:p-4 rounded-md border-2 border-gray-400 hover:shadow-lg ease-out hover:scale-105 transition-all duration-500">
+ 
+  return  (
+    <motion.div className="w-full md:w-[80%] bg-gray-200 p-2 md:p-4 rounded-md border-2 border-gray-400 hover:shadow-lg ease-out hover:scale-105 transition-all duration-500"  >
       {image && image !== "" && (
         <Image
           alt={title || "Imagem do projeto"}
@@ -81,6 +81,6 @@ export function CardProject({
           
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
